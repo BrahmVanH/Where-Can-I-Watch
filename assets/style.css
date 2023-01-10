@@ -1,0 +1,106 @@
+html{
+    background-color: white;
+}
+.header{
+    background-color: #2D3142;
+    color: white;
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    border-bottom: 5px solid #EF8354;
+    font-family: 'Lobster', cursive;
+    
+}
+
+p{
+    -webkit-text-stroke: 0.2px;
+    -webkit-text-stroke-color: #EF8354;
+}
+
+.movie-image{
+    background-color: #2D3142;
+    text-align: center;
+    color: white;
+    border: 5px solid #EF8354;
+    border-radius: 30px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 30px;
+
+}
+
+.movie-info{
+    background-color: #2D3142;
+    text-align: center;
+    color: white;
+    border: 5px solid #EF8354;
+    border-radius: 30px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 30px;
+
+}
+
+.streaming-info{
+    background-color: #2D3142;
+    text-align: center;
+    color: white;
+    border: 5px solid #EF8354;
+    border-radius: 30px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 30px;
+
+}
+
+.searchbar{
+    background-color: white;
+    border: 5px solid #EF8354;
+    border-radius: 30px;
+    color: black;
+    
+}
+
+.searchbar:hover{
+    border: 5px solid #EF8354;
+    
+}
+
+.searchbar:focus{
+    border: 5px solid #EF8354;
+    
+}
+::placeholder{
+    color: black !important;
+}
+
+.trending{
+    background-color: #2D3142;
+    color: white;
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    border: 5px solid #EF8354;
+    border-radius: 30px;
+    font-family: 'Lobster', cursive;
+    
+}
+
+img{
+    border-radius: 30px;
+    max-width: 500x;
+    max-height: 500px;
+}
+
+.trending-info{
+    background-color: #2D3142;
+    text-align: center;
+    color: white;
+    border: 5px solid #EF8354;
+    border-radius: 30px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 30px;
+}
+/* Color Palette (may or many not be changed later)
+Space Cadet #2D3142
+Silver #BFC0C0
+White #FFFFFF
+Mandarin #EF8354
+Black Coral #4F5D75

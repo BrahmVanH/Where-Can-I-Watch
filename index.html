@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Lobster&family=Orbitron&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/style.css">
-    <title>Where can I watch?</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>    <title>Where can I watch?</title>
 </head>
 <body>
     <div class="columns is-centered header">
-        <div class="column is-half">
-          Where can I watch......
-          <input class="input is-medium is-rounded searchbar" type="text" placeholder="Type in a Movie or TV Show Title Here......">
+        <div id="watchList" class="column is-half">
+          <p>Where can I watch......</p>
+          <input id="searchInput" class="input is-rounded searchbar" type="text" placeholder="Type in a Movie or TV Show Title Here......">
+          <button id="searchBtn" type="button">Search</button>
+          <select id="watchList" class="form-input w-100">
+            <option value="" disabled selected>Watch List</option>
+            <option>watch list item</option>
+          </select>
         </div>
+        
+       
     </div>
     <div class="columns is-centered m-5 p-2">
-        <div class="column is-one-fifth m-2 p-4 movie-image">
+        <div  class="column is-one-fifth m-2 p-4 movie-image">
           Movie image goes here<br>
+          <img id="movieImage" class="movieposter"> 
           <img class="movieposter" src="https://m.media-amazon.com/images/I/A1inGqJJHXL.jpg"> <!-- this link is temporary. fell free to removei it whenever-->
         </div>
         <div class="column is-two-fifths m-2 p-4 movie-info">
-          Movie info goes here
+          <h3 id="movieTitle"></h3>
+          <p id="movieRating"></p>
+          <p id="movieYear"></p>
+          <p id="movieGenre"></p>
+          <p id="movieSynopsis"></p>
+          <button id="saveBtn" type="button">Save To Watchlist</button>
+          
         </div>
         <div class="column is-two-fifths m-2 p-4 streaming-info">
           Streaming info goes here
@@ -51,7 +65,6 @@
           </div>
         </div>
     </div>
-<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-<script src="./assets/script.js"></script>
+<script src="./script2.js"></script>
 </body>
 </html>

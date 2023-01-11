@@ -1,13 +1,13 @@
-var searchBtn = $('#searchBtn');
-var searchInput = $('#searchInput');
-var watchList = $('#watchList');
-var saveBtn = $('#saveBtn')
-var movieTitleEl = $('#movieTitle');
-var ratingEl = $('#movieRating');
-var yearEl = $('#movieYear');
-var genreEl = $('#movieGenre');
-var imageEl = $('#movieImage');
-var synopsisEl = $('#movieSynopsis');
+const searchBtn = $('#searchBtn');
+const searchInput = $('#searchInput');
+const watchList = $('#watchList');
+const saveBtn = $('#saveBtn')
+const movieTitleEl = $('#movieTitle');
+const ratingEl = $('#movieRating');
+const yearEl = $('#movieYear');
+const genreEl = $('#movieGenre');
+const imageEl = $('#movieImage');
+const synopsisEl = $('#movieSynopsis');
 
 
 apiUrl = 'https://imdb-api.com'
@@ -52,55 +52,15 @@ function getTitleInformation(titleId) {
 	
 }
 
-/* function createMovieCard() {
-	var movieResults = $('#movieResults');
-	
-	var title = $('<p>');
-	var year = $('<p>');
-	var rating = $('<p>');
-	var genre = $('<p>');
-	var synopsis = $('<p>');
-	var image = $('<img>');
-	var saveBtn = $('<button>save to watch list</button>')
-	
-	title.attr('id', 'movieTitle');
-	year.attr('id', 'movieYear');
-	rating.attr('id', 'movieRating');
-	genre.attr('id', 'movieGenre');
-	synopsis.attr('id', 'movieSynopsis');
-	image.attr('id', "movieImage");
-	image.attr('alt', "Image from cover of movie");
-	
-	
-	
-	movieResults.append(title);
-	movieResults.append(year);
-	movieResults.append(rating);
-	movieResults.append(genre);
-	movieResults.append(synopsis);
-	movieResults.append(image);
-	
-	
-} */
 
 function populateMovieCard(data) {
-	
-	// createMovieCard();
-	
-	/* var title = $('#movieTitle');
-	var year = $('#movieYear');
-	var rating = $('#movieRating');
-	var genre = $('#movieGenre');
-	var synopsis = $('#movieSynopsis');
-	var image = $('#movieImage'); */
-
 	
 	movieTitleEl.text(data.fullTitle);
 	yearEl.text(data.year);
 	ratingEl.text(data.contentRating);
-	genre.text(data.genres);
-	synopsis.text(data.plot);
-	image.attr('src', data.imgages.items[0].image);
+	genreEl.text(data.genres);
+	synopsisEl.text(data.plot);
+	imageEl.attr('src', data.imgages.items[0].image);
 	
 }
 
@@ -112,18 +72,19 @@ function searchSubmit(event) {
 	
 }
 
-/* function saveTitle() {
+ function saveTitle(event) {
 
-	savedTitle = title.text;
-	savedYear = year.text;
+	
+	event.preventDefault();
 
-	localStorage.setItem(savedTitle, savedYear);
+	localStorage.setItem("Watch Item", JSON.stringify(movieTitleEl));
 	createWatchList();
 	console.log('save title');
+	console.log(JSON.stringify(movieTitleEl))
 
-} */
+} 
 
-/* function createWatchList() {
+ function createWatchList() {
 
 	var list = $('<ul>')
 	watchList.append(list);
@@ -135,36 +96,7 @@ function searchSubmit(event) {
 		watchItem.text = storedItem;
 		list.append(watchItem);
 	}
-} */
-
-saveBtn.on('click', function() {
-	movieYear = $(this).siblings('#movieYear').text;
-	movieTitle = $(this).siblings('#movieTitle').text;
-	localStorage.setItem(movieTitle, movieYear);
-  });
-
-
-
-searchBtn.on('click', searchSubmit);
-
-
-/* Title data.results[0].title
-Year data.results[0].year
-Rating data.results[0].rating
-Genre data.results[0].title_type
-Synopsis data.results[0].synopsis
-Image data.results[0].img
-
-
-*/
-
-// function to save identified items into local storage
-// function to create button on movie card that saves to local storage
-// function to clear local storage
-// function to create list items with watch list items
-// li should have anchor tag 
-
-
+}
 function renderWatchListItems() {
 
 	watchList.empty();
@@ -184,4 +116,28 @@ function renderWatchListItems() {
 
 
 
-saveBtn.on('click', storeToWatchList)
+searchBtn.on('click', searchSubmit);
+saveBtn.on('click', saveTitle);
+
+
+/* Title data.results[0].title
+Year data.results[0].year
+Rating data.results[0].rating
+Genre data.results[0].title_type
+Synopsis data.results[0].synopsis
+Image data.results[0].img
+
+
+*/
+
+// function to save identified items into local storage
+// function to create button on movie card that saves to local storage
+// function to clear local storage
+// function to create list items with watch list items
+// li should have anchor tag 
+
+
+
+
+
+

@@ -11,19 +11,17 @@
 </head>
 <body>
     <div class="columns is-centered header">
-        <div class="column is-half">
+        <div id="watchList" class="column is-half">
           <p>Where can I watch......</p>
           <input id="searchInput" class="input is-rounded searchbar" type="text" placeholder="Type in a Movie or TV Show Title Here......">
           <button id="searchBtn" type="button">Search</button>
-        </div>
-        <div id="watchList">
           <select id="watchList" class="form-input w-100">
             <option value="" disabled selected>Watch List</option>
-            <option>wathch list item</option>
+            <option>watch list item</option>
           </select>
-          Where can I watch......
-          <input class="input is-medium is-rounded searchbar" type="text" placeholder="Type in a Movie or TV Show Title Here......">
         </div>
+        
+       
     </div>
     <div class="columns is-centered m-5 p-2">
         <div  class="column is-one-fifth m-2 p-4 movie-image">
@@ -37,7 +35,7 @@
           <p id="movieYear"></p>
           <p id="movieGenre"></p>
           <p id="movieSynopsis"></p>
-          <button id="saveBtn">Save To Watchlist</button>
+          <button id="saveBtn" type="button">Save To Watchlist</button>
           
         </div>
         <div class="column is-two-fifths m-2 p-4 streaming-info">

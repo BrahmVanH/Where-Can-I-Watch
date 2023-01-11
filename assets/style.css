@@ -1,27 +1,23 @@
 html{
-    background-color: white;
+    background-color: #000000;
 }
 .header{
-    background-color: #2D3142;
-    color: white;
+    background-color: #14213d;
+    color: #e5e5e5;
     text-align: center;
     font-size: 60px;
     font-weight: bold;
-    border-bottom: 5px solid #EF8354;
-    font-family: 'Lobster', cursive;
+    border-bottom: 5px solid #fca311;
+    font-family: 'Orbitron', sans-serif;
+    animation: glow 1s ease-in-out infinite alternate;
     
 }
 
-p{
-    -webkit-text-stroke: 0.2px;
-    -webkit-text-stroke-color: #EF8354;
-}
-
 .movie-image{
-    background-color: #2D3142;
+    background-color: #14213d;
     text-align: center;
     color: white;
-    border: 5px solid #EF8354;
+    border: 5px solid #fca311;
     border-radius: 30px;
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 30px;
@@ -29,10 +25,10 @@ p{
 }
 
 .movie-info{
-    background-color: #2D3142;
+    background-color: #14213d;
     text-align: center;
     color: white;
-    border: 5px solid #EF8354;
+    border: 5px solid #fca311;
     border-radius: 30px;
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 30px;
@@ -40,10 +36,10 @@ p{
 }
 
 .streaming-info{
-    background-color: #2D3142;
+    background-color: #14213d;
     text-align: center;
     color: white;
-    border: 5px solid #EF8354;
+    border: 5px solid #fca311;
     border-radius: 30px;
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 30px;
@@ -52,19 +48,19 @@ p{
 
 .searchbar{
     background-color: white;
-    border: 5px solid #EF8354;
+    border: 5px solid #fca311;
     border-radius: 30px;
     color: black;
     
 }
 
 .searchbar:hover{
-    border: 5px solid #EF8354;
+    border: 5px solid #fca311;
     
 }
 
 .searchbar:focus{
-    border: 5px solid #EF8354;
+    border: 5px solid #fca311;
     
 }
 ::placeholder{
@@ -72,14 +68,14 @@ p{
 }
 
 .trending{
-    background-color: #2D3142;
+    background-color: #14213d;
     color: white;
     text-align: center;
-    font-size: 60px;
+    font-size: 40px;
     font-weight: bold;
-    border: 5px solid #EF8354;
+    border: 5px solid #fca311;
     border-radius: 30px;
-    font-family: 'Lobster', cursive;
+    font-family: 'Orbitron', sans-serif;
     
 }
 
@@ -90,14 +86,27 @@ img{
 }
 
 .trending-info{
-    background-color: #2D3142;
+    background-color: #14213d;
     text-align: center;
     color: white;
-    border: 5px solid #EF8354;
+    border: 5px solid #fca311;
     border-radius: 30px;
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 30px;
 }
+
+.trending-info:hover{
+transform: scale(1.);
+}
+  
+  @-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fca311, 0 0 20px #fca311, 0 0 30px #fca311;
+    }
+    to {
+      text-shadow: 0 0 20px #14213d, 0 0 30px #14213d, 0 0 40px #14213d, 0 0 50px #14213d, 0 0 60px #14213d, 0 0 70px #14213d, 0 0 80px #14213d;
+    }
+  }
 /* Color Palette (may or many not be changed later)
 Space Cadet #2D3142
 Silver #BFC0C0

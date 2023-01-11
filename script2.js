@@ -2,12 +2,13 @@ var searchBtn = $('#searchBtn');
 var searchInput = $('#searchInput');
 var watchList = $('#watchList');
 var saveBtn = $('#saveBtn')
-var title = $('#movieTitle');
-var rating = $('#movieRating');
-var year = $('#movieYear');
-var genre = $('#movieGenre');
-var image = $('#movieImage');
-var synopsis = $('#movieSynopsis');
+var movieTitleEl = $('#movieTitle');
+var ratingEl = $('#movieRating');
+var yearEl = $('#movieYear');
+var genreEl = $('#movieGenre');
+var imageEl = $('#movieImage');
+var synopsisEl = $('#movieSynopsis');
+
 
 apiUrl = 'https://imdb-api.com'
 apiKey = 'k_34v6xu6e/'
@@ -94,12 +95,12 @@ function populateMovieCard(data) {
 	var image = $('#movieImage'); */
 
 	
-	title.text(data.fullTitle);
-	year.text(data.year);
-	rating.text(data.contentRating);
+	movieTitleEl.text(data.fullTitle);
+	yearEl.text(data.year);
+	ratingEl.text(data.contentRating);
 	genre.text(data.genres);
 	synopsis.text(data.plot);
-	image.attr('src', data.imgage);
+	image.attr('src', data.imgages.items[0].image);
 	
 }
 
@@ -111,7 +112,7 @@ function searchSubmit(event) {
 	
 }
 
-function saveTitle() {
+/* function saveTitle() {
 
 	savedTitle = title.text;
 	savedYear = year.text;
@@ -120,9 +121,9 @@ function saveTitle() {
 	createWatchList();
 	console.log('save title');
 
-}
+} */
 
-function createWatchList() {
+/* function createWatchList() {
 
 	var list = $('<ul>')
 	watchList.append(list);
@@ -134,7 +135,7 @@ function createWatchList() {
 		watchItem.text = storedItem;
 		list.append(watchItem);
 	}
-}
+} */
 
 saveBtn.on('click', function() {
 	movieYear = $(this).siblings('#movieYear').text;
@@ -163,3 +164,24 @@ Image data.results[0].img
 // function to create list items with watch list items
 // li should have anchor tag 
 
+
+function renderWatchListItems() {
+
+	watchList.empty();
+
+	for (let i = 0; i < watchTitles.length; i++) {
+
+		var li = $('<option>');
+		li.addClass('watchTitleName');
+		li.attr('data-name', watchTitles[i]);
+		watchList.appen(li);
+
+		li.text(watchTitles[i])
+
+		
+	}
+}
+
+
+
+saveBtn.on('click', storeToWatchList)

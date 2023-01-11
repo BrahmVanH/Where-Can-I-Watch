@@ -7,7 +7,7 @@ AS A user
 
 I WANT to be able to access television and movie listings to learn more about them and what streaming services to watch them on
 
-SO THAT I can enjoy movies
+SO THAT I can know where to watch my movie
 
 GIVEN that I am looking for the best site to stream a movie or TV show title
 

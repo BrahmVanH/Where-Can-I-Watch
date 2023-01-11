@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Lobster&family=Orbitron&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/style.css">
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>    <title>Where can I watch?</title>
 </head>
@@ -22,12 +21,15 @@
             <option value="" disabled selected>Watch List</option>
             <option>wathch list item</option>
           </select>
+          Where can I watch......
+          <input class="input is-medium is-rounded searchbar" type="text" placeholder="Type in a Movie or TV Show Title Here......">
         </div>
     </div>
     <div class="columns is-centered m-5 p-2">
         <div  class="column is-one-fifth m-2 p-4 movie-image">
           Movie image goes here<br>
           <img id="movieImage" class="movieposter"> 
+          <img class="movieposter" src="https://m.media-amazon.com/images/I/A1inGqJJHXL.jpg"> <!-- this link is temporary. fell free to removei it whenever-->
         </div>
         <div class="column is-two-fifths m-2 p-4 movie-info">
           <h3 id="movieTitle"></h3>
@@ -48,19 +50,19 @@
           <div class="column m-3"></div>
           <div class="columns is-centered">
             <div class="column is-2 m-3 trending-info">
-              First column
+                Trending Movie/TV Show #1
             </div>
             <div class="column is-2 m-3 trending-info">
-              Second column
+                Trending Movie/TV Show #2
             </div>
             <div class="column is-2 m-3 trending-info">
-              Third column
+                Trending Movie/TV Show #3
             </div>
             <div class="column is-2 m-3 trending-info">
-              Fourth column
+                Trending Movie/TV Show #4
             </div>
             <div class="column is-2 m-3 trending-info">
-              Fifth column
+                Trending Movie/TV Show #5
             </div>
           </div>
         </div>

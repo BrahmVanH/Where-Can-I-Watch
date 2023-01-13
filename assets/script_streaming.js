@@ -1,3 +1,4 @@
+var streamingServicesEl = $('#streamingServices');
 apiUrlStreaming = 'https://api.themoviedb.org/3/'
 apiKeyTMDB = '840b0e9fd24a9f575605a19d49ff9d2c'
 
@@ -42,6 +43,7 @@ function getStreamingServices(TMDBId) {
     })
 	.then(function(data) {
 		console.log(data);
+        grabServices(data);
         
 		
 		
@@ -51,12 +53,6 @@ function getStreamingServices(TMDBId) {
     })
 
 }
-
-function grabServices() {
-
-
-}
-
 
 
 

@@ -30,10 +30,10 @@ api to get top 5 trending movies right now as our landing page https://developer
 
 Tasks:
 
-create basic HTML
-style the page
-getting familiar with the APIs
-search bar
+create basic HTML >>
+style the page >>
+getting familiar with the APIs >>
+search bar >>
 js cleanup
 Need to include use of local storage
-come up with acceptance criteria
+come up with acceptance criteria >> 

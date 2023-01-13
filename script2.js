@@ -8,23 +8,28 @@ const yearEl = $('#movieYear');
 const genreEl = $('#movieGenre');
 const imageEl = $('#movieImage');
 const synopsisEl = $('#movieSynopsis');
+const streamingServicesEl = $('#streamingServices');
 
 
 apiUrl = 'https://imdb-api.com'
 apiKey = 'k_34v6xu6e/'
+apiKey2 = 'k_alj13px2/'
 function getTitleId(searchTitle) {
 	
-	url = apiUrl + '/en/API/SearchTitle/' + apiKey + searchTitle
+	url = apiUrl + '/en/API/SearchTitle/' + apiKey2 + searchTitle
 	
 	
 	fetch(url)
 	.then(function(response) {
 		return response.json();
 		console.log(response);
+		
     })
 	.then(function(data) {
 		console.log(data);
 		getTitleInformation(data.results[0].id);
+		getStreamingServices(data.results[0].id);
+
 		
     }) 
 	.catch(function(err) {
@@ -35,7 +40,7 @@ function getTitleId(searchTitle) {
 
 function getTitleInformation(titleId) {
 	
-	url = apiUrl + '/en/API/Title/' + apiKey + titleId + '/Images,Ratings';
+	url = apiUrl + '/en/API/Title/' + apiKey2 + titleId + '/Images,Ratings';
 	
 	fetch(url)
 	.then(function(response) {
@@ -44,12 +49,66 @@ function getTitleInformation(titleId) {
 	})
 	.then(function(data) {
 		console.log(data);
-		populateMovieCard(data);	
+		populateMovieCard(data);
+			
 	}) 
 	.catch(function(err) {
 		console.error(err);
 	})
 	
+}
+
+function getStreamingServices(IMDBId) {
+
+	url = apiUrl +'/en/API/ExternalSites/' + apiKey2 + IMDBId 
+	fetch(url)
+	.then(function(response) {
+		return response.json();
+		console.log(response);
+	})
+	.then(function(data) {
+		console.log(data);
+		populateMovieCard(data);
+		grabServices(data);
+			
+	}) 
+	.catch(function(err) {
+		console.error(err);
+	})
+
+}
+
+function grabServices(allServices) {
+
+    if(!allServices.netflix) {
+
+		console.log('no netflix here')
+	}
+	
+	else {
+        var netflixLi = $('<a>');
+        netflixLi.attr('href', allServices.netflix.url);
+		var netflixImg = $('<img>');
+		netflixImg.attr('src', "./assets/logonetflix.png")
+		netflixImg.attr('target', '_blank');
+        streamingServicesEl.append(netflixLi);
+		netflixLi.append(netflixImg);
+        console.log('run');
+        console.log(allServices.netflix.url)
+
+		/* **Still need buttons**
+		Netflix
+		Hulu
+		Disney Plus
+		Paramount+
+		Amazon Prime Video
+		Apple TV
+		HBO Max
+		Showtime */
+			
+    }
+
+
 }
 
 
@@ -60,7 +119,8 @@ function populateMovieCard(data) {
 	ratingEl.text(data.contentRating);
 	genreEl.text(data.genres);
 	synopsisEl.text(data.plot);
-	imageEl.attr('src', data.imgages.items[0].image);
+	imageEl.attr('src', data.image);
+
 	
 }
 
@@ -112,7 +172,9 @@ function renderWatchListItems() {
 
 		
 	}
-}
+}  
+
+
 
 
 

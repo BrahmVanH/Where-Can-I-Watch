@@ -11,7 +11,14 @@ const synopsisEl = $('#movieSynopsis');
 
 
 apiUrl = 'https://imdb-api.com'
-apiKey = 'k_34v6xu6e/'
+apiKey = 'k_alj13px2/'           
+
+/*Additional Keys
+k_9qsd16n6
+k_alj13px2
+k_34v6xu6e
+*/
+
 function getTitleId(searchTitle) {
 	
 	url = apiUrl + '/en/API/SearchTitle/' + apiKey + searchTitle
@@ -60,7 +67,7 @@ function populateMovieCard(data) {
 	ratingEl.text(data.contentRating);
 	genreEl.text(data.genres);
 	synopsisEl.text(data.plot);
-	imageEl.attr('src', data.imgages.items[0].image);
+	imageEl.attr('src', data.image);
 	
 }
 
@@ -77,7 +84,7 @@ function searchSubmit(event) {
 	
 	event.preventDefault();
 
-	localStorage.setItem("Watch Item", JSON.stringify(movieTitleEl));
+	window.localStorage.setItem("Watch Item", JSON.stringify(movieTitleEl));
 	createWatchList();
 	console.log('save title');
 	console.log(JSON.stringify(movieTitleEl))
@@ -92,7 +99,7 @@ function searchSubmit(event) {
 	for (let i = 0; i < localStorage.length; i++) {
 
 		var watchItem = $('<li>')
-		var storedItem = localStorage.getItem(i);
+		var storedItem = window.localStorage.getItem(i);
 		watchItem.text = storedItem;
 		list.append(watchItem);
 	}
@@ -114,6 +121,14 @@ function renderWatchListItems() {
 	}
 }
 
+/* This bit of code lets you hit the "enter" key to search as well as the actual search button.*/
+var input = document.getElementById("searchInput");
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("searchBtn").click();
+  }
+});
 
 
 searchBtn.on('click', searchSubmit);

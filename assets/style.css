@@ -5,7 +5,7 @@ html{
     background-color: #14213d;
     color: #e5e5e5;
     text-align: center;
-    font-size: 60px;
+    font-size: 80px;
     font-weight: bold;
     border-bottom: 5px solid #fca311;
     font-family: 'Orbitron', sans-serif;
@@ -79,10 +79,12 @@ html{
     
 }
 
-img{
-    border-radius: 30px;
-    max-width: 500x;
-    max-height: 500px;
+.movieimg{
+    border-radius: 30px !important;
+    max-width: 375px !important;
+    max-height: 675px !important;
+    height: 650px;
+    padding-top: 5px !important;
 }
 
 .trending-info{
@@ -99,7 +101,7 @@ img{
 transform: scale(1.);
 }
   
-  @-webkit-keyframes glow {
+@keyframes glow {
     from {
         text-shadow: 0 0 10px #fca311, 0 0 20px #fca311, 0 0 30px #fca311;
     }
@@ -107,6 +109,40 @@ transform: scale(1.);
       text-shadow: 0 0 20px #14213d, 0 0 30px #14213d, 0 0 40px #14213d, 0 0 50px #14213d, 0 0 60px #14213d, 0 0 70px #14213d, 0 0 80px #14213d;
     }
   }
+
+button{
+    border: 5px solid #fca311 !important;
+    border-radius: 30px !important;
+    font-family: 'Barlow Condensed', sans-serif !important;
+    font-size: 20px !important;
+    color: #000000 !important;
+    
+}
+
+button:hover{
+    border: 5px solid white !important;
+    border-radius: 30px !important;
+    font-family: 'Barlow Condensed', sans-serif !important;
+    font-size: 20px !important;
+    color: white !important;
+    background-color: #fca311 !important;
+}
+
+select{
+    border: 5px solid #fca311 !important;
+    border-radius: 30px !important;
+    font-family: 'Barlow Condensed', sans-serif !important;
+    font-size: 20px !important;
+    text-align: center;
+}
+
+strong{
+    color: white;
+    font-weight: 40px;
+    text-decoration: underline #fca311;
+    font-size: 40px;
+}
+
 /* Color Palette (may or many not be changed later)
 Space Cadet #2D3142
 Silver #BFC0C0

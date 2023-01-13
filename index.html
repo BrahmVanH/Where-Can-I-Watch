@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Lobster&family=Orbitron&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/style.css">
@@ -27,7 +28,7 @@
         <div  class="column is-one-fifth m-2 p-4 movie-image">
           Movie image goes here<br>
           <img id="movieImage" class="movieposter"> 
-          <img class="movieposter" src="https://m.media-amazon.com/images/I/A1inGqJJHXL.jpg"> <!-- this link is temporary. fell free to removei it whenever-->
+          <img class="movieposter"> <!-- this link is temporary. fell free to removei it whenever-->
         </div>
         <div class="column is-two-fifths m-2 p-4 movie-info">
           <h3 id="movieTitle"></h3>
@@ -47,24 +48,29 @@
           <p>Trending Now</p>
           <div class="column m-3"></div>
           <div class="columns is-centered">
-            <div class="column is-2 m-3 trending-info">
-                Trending Movie/TV Show #1
+            <div id="trending-1" class="column is-2 m-3 trending-info">
+                
+                <img id="trending-1-image">
             </div>
-            <div class="column is-2 m-3 trending-info">
-                Trending Movie/TV Show #2
+            <div id="trending-2" class="column is-2 m-3 trending-info">
+                
+                <img id="trending-2-image">
             </div>
-            <div class="column is-2 m-3 trending-info">
-                Trending Movie/TV Show #3
+            <div id="trending-3" class="column is-2 m-3 trending-info">
+                
+              <img id="trending-3-image">
             </div>
-            <div class="column is-2 m-3 trending-info">
-                Trending Movie/TV Show #4
+            <div id="trending-4" class="column is-2 m-3 trending-info">
+                <img id="trending-4-image">
             </div>
-            <div class="column is-2 m-3 trending-info">
-                Trending Movie/TV Show #5
+            <div id="trending-5" class="column is-2 m-3 trending-info">
+                <img id="trending-5-image">
             </div>
           </div>
         </div>
     </div>
 <script src="./script2.js"></script>
+<script src="./assets/script_trending.js"></script>
+<!--<script src="./assets/script_streaming.js"></script>-->
 </body>
 </html>

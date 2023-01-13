@@ -21,10 +21,13 @@ function getTitleId(searchTitle) {
 	.then(function(response) {
 		return response.json();
 		console.log(response);
+		
     })
 	.then(function(data) {
 		console.log(data);
 		getTitleInformation(data.results[0].id);
+		getStreamingServices(data.results[0].id);
+
 		
     }) 
 	.catch(function(err) {
@@ -44,12 +47,32 @@ function getTitleInformation(titleId) {
 	})
 	.then(function(data) {
 		console.log(data);
-		populateMovieCard(data);	
+		populateMovieCard(data);
+			
 	}) 
 	.catch(function(err) {
 		console.error(err);
 	})
 	
+}
+
+function getStreamingServices(IMDBId) {
+
+	url = apiUrl +'/en/API/ExternalSites/' + apiKey + IMDBId 
+	fetch(url)
+	.then(function(response) {
+		return response.json();
+		console.log(response);
+	})
+	.then(function(data) {
+		console.log(data);
+		populateMovieCard(data);
+			
+	}) 
+	.catch(function(err) {
+		console.error(err);
+	})
+
 }
 
 
@@ -60,7 +83,8 @@ function populateMovieCard(data) {
 	ratingEl.text(data.contentRating);
 	genreEl.text(data.genres);
 	synopsisEl.text(data.plot);
-	imageEl.attr('src', data.imgages.items[0].image);
+	imageEl.attr('src', data.image);
+
 	
 }
 

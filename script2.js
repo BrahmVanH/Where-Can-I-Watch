@@ -9,6 +9,7 @@ const genreEl = $('#movieGenre');
 const imageEl = $('#movieImage');
 const synopsisEl = $('#movieSynopsis');
 const streamingServicesEl = $('#streamingServices');
+const mainContent = $('#mainContent');
 
 
 apiUrl = 'https://imdb-api.com'
@@ -127,6 +128,7 @@ function populateMovieCard(data) {
 function searchSubmit(event) {
 
 	event.preventDefault();
+	mainContent.attr("style","");
 	var title = searchInput.val();
 	getTitleId(title);
 	

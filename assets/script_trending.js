@@ -1,34 +1,38 @@
-var trend1 = $('#trending-1');
-var trend2 = $('#trending-2');
-var trend3 = $('#trending-3');
-var trend4 = $('#trending-4');
-var trend5 = $('#trending-5');
-var trendImage1 = $('#trending-1-image');
-var trendImage2 = $('#trending-2-image');
-var trendImage3 = $('#trending-3-image');
-var trendImage4 = $('#trending-4-image');
-var trendImage5 = $('#trending-5-image');
-apiUrlTrending = 'https://api.themoviedb.org/3/trending/'
-apiKeyTMDB = '840b0e9fd24a9f575605a19d49ff9d2c'
+const trending1Title = $('#trending-1-title');
+const trending2Title = $('#trending-2-title');
+const trending3Title = $('#trending-3-title');
+const trending4Title = $('#trending-4-title');
+const trending5Title = $('#trending-5-title');
+const trendImage1 = $('#trending-1-image');
+const trendImage2 = $('#trending-2-image');
+const trendImage3 = $('#trending-3-image');
+const trendImage4 = $('#trending-4-image');
+const trendImage5 = $('#trending-5-image');
+
+const API_URL_TRENDING = 'https://api.themoviedb.org/3/trending/';
+const API_KEY_TMDB = '840b0e9fd24a9f575605a19d49ff9d2c';
+const API_IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
+
+
 
 
 function getTrendingFive() {
-	
-	url = apiUrlTrending + 'movie/week?api_key=' + apiKeyTMDB
-	
-	
+
+	url = API_URL_TRENDING + 'movie/week?api_key=' + API_KEY_TMDB;
+
+
 	fetch(url)
 	.then(function(response) {
 		return response.json();
 		console.log(response);
-		
+
     })
 	.then(function(data) {
-		console.log('top 5' + data);
+		console.log('TOP 5', data)
         populateTrending(data);
-		
-		
-    }) 
+
+
+    })
 	.catch(function(err) {
 		console.error(err);
     })
@@ -37,18 +41,26 @@ function getTrendingFive() {
 
 
 function populateTrending(trending) {
+	console.log("HIT***")
 
-    trend1.text(trending.results[0].original_title);
-    trend2.text(trending.results[1].original_title);
-    trend3.text(trending.results[2].original_title);
-    trend4.text(trending.results[3].original_title);
-    trend5.text(trending.results[4].original_title);
+	// Set title for each trending item
+	trending1Title.text(trending.results[0].original_title);
+	trending2Title.text(trending.results[1].original_title);
+	trending3Title.text(trending.results[2].original_title);
+	trending4Title.text(trending.results[3].original_title);
+	trending5Title.text(trending.results[4].original_title);
 
-    trendImage1.attr('src', trending.results[0].image)
+	// Set image src for each trending item
+    trendImage1.attr('src', API_IMAGE_BASE_URL  + trending.results[0].poster_path);
+	trendImage2.attr('src', API_IMAGE_BASE_URL  + trending.results[1].poster_path);
+	trendImage3.attr('src', API_IMAGE_BASE_URL  + trending.results[2].poster_path);
+	trendImage4.attr('src', API_IMAGE_BASE_URL  + trending.results[3].poster_path);
+	trendImage5.attr('src', API_IMAGE_BASE_URL  + trending.results[4].poster_path);
 
 
-    
-    
+
+
+
 }
 getTrendingFive();
 

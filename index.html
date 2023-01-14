@@ -14,59 +14,65 @@
     <div class="columns is-centered header">
         <div id="watchList" class="column is-half">
           <p>Where can I watch......</p>
-          <input id="searchInput" class="input is-rounded searchbar" type="text" placeholder="Type in a Movie or TV Show Title Here......">
-          <button id="searchBtn" type="button">Search</button>
-          <select id="watchList" class="form-input w-100">
+          <input id="searchInput" class="input is-rounded searchbar is-large" type="text" placeholder="Type in a Movie Title Here......">
+          <button id="searchBtn" type="button" class="button is-white is-medium">Search</button>
+          <select id="watchList" class="form-input w-100 select is-medium">
             <option value="" disabled selected>Watch List</option>
-            <option>watch list item</option>
+            <option>Watch List Item</option>
           </select>
         </div>
-        
        
-    </div>
-    <div class="columns is-centered m-5 p-2" style="display:none" id="mainContent">
-        <div  class="column is-one-fifth m-2 p-4 movie-image">
-          Movie image goes here<br>
-          <img id="movieImage" class="movieposter"> 
-          <img class="movieposter"> <!-- this link is temporary. fell free to removei it whenever-->
-        </div>
-        <div class="column is-two-fifths m-2 p-4 movie-info">
-          <h3 id="movieTitle"></h3>
-          <p id="movieRating"></p>
-          <p id="movieYear"></p>
-          <p id="movieGenre"></p>
-          <p id="movieSynopsis"></p>
-          <button id="saveBtn" type="button">Save To Watchlist</button>
-          
-        </div>
-        <div id="streamingServices" class="column is-two-fifths m-2 p-4 streaming-info">
-          Streaming info goes here
-        </div>
-    </div>
+       
+      </div>
+      <div class="columns is-centered m-5 p-2" style="display: none;">
+          <div  class="column is-one-fifth m-2 p-4 movie-image">
+            <img id="movieImage" class="movieposter movieimg"> 
+          </div>
+          <div class="column is-two-fifths m-2 p-4 movie-info">
+            <div class="columns">
+              <div class="column has-text-left">
+                <strong>Title:</strong><h3 id="movieTitle"></h3>
+                <strong>Rating:</strong><p id="movieRating"></p>
+                <strong>Release Year:</strong><p id="movieYear"></p>
+                <strong>Genre:</strong><p id="movieGenre"></p>
+                <strong>Synopsis:</strong><p id="movieSynopsis"></p><br>
+                  <div class="columns is-centered pb-5">
+                    <button id="saveBtn" type="button" class="button" onkeypress="handle(event)">Save To Watchlist</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="column is-two-fifths m-2 p-4 streaming-info">
+
+          </div>
+      </div>
     <div class="columns is-centered p-5">
         <div class="column is-full p-5 m-5 trending">
           <p>Trending Now</p>
           <div class="column m-3"></div>
           <div class="columns is-centered">
-            <div id="trending-1" class="column is-2 m-3 trending-info">
-                
-                <img id="trending-1-image">
+
+	          <div class="column is-2 m-3 trending-info">
+	            <div id="trending-1-title"></div>
+	            <img id="trending-1-image" />
             </div>
-            <div id="trending-2" class="column is-2 m-3 trending-info">
-                
-                <img id="trending-2-image">
-            </div>
-            <div id="trending-3" class="column is-2 m-3 trending-info">
-                
-              <img id="trending-3-image">
-            </div>
-            <div id="trending-4" class="column is-2 m-3 trending-info">
-                <img id="trending-4-image">
-            </div>
-            <div id="trending-5" class="column is-2 m-3 trending-info">
-                <img id="trending-5-image">
-            </div>
-          </div>
+
+	          <div class="column is-2 m-3 trending-info">
+		          <div id="trending-2-title"></div>
+		          <img id="trending-2-image" />
+	          </div>
+	          <div class="column is-2 m-3 trending-info">
+		          <div id="trending-3-title"></div>
+		          <img id="trending-3-image" />
+	          </div>
+	          <div class="column is-2 m-3 trending-info">
+		          <div id="trending-4-title"></div>
+		          <img id="trending-4-image" />
+	          </div>
+	          <div class="column is-2 m-3 trending-info">
+		          <div id="trending-5-title"></div>
+		          <img id="trending-5-image" />
+	          </div>
         </div>
     </div>
 <script src="./script2.js"></script>

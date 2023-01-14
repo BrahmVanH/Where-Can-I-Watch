@@ -176,7 +176,14 @@ function renderWatchListItems() {
 	}
 }  
 
-
+/* This bit of code lets you hit the "enter" key to search as well as the actual search button.*/
+var input = document.getElementById("searchInput");
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("searchBtn").click();
+  }
+});
 
 
 

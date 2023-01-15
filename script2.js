@@ -13,7 +13,7 @@ const mainContent = $('#mainContent');
 
 
 apiUrl = 'https://imdb-api.com'
-apiKey = 'k_34v6xu6e/'
+apiKey = 'k_7jji1u3r/'
 apiKey2 = 'k_alj13px2/'
 function getTitleId(searchTitle) {
 	
@@ -81,21 +81,22 @@ function getStreamingServices(IMDBId) {
 
 function grabServices(allServices) {
 
-    if(!allServices.netflix) {
+    if(allServices.netflix) {
 
-		console.log('no netflix here')
-	}
-	
-	else {
-        var netflixLi = $('<a>');
+		var netflixLi = $('<a>');
         netflixLi.attr('href', allServices.netflix.url);
+		netflixLi.attr('target', '_blank');
 		var netflixImg = $('<img>');
 		netflixImg.attr('src', "./assets/logonetflix.png")
-		netflixImg.attr('target', '_blank');
+		netflixImg.addClass('streaminglogo');
         streamingServicesEl.append(netflixLi);
 		netflixLi.append(netflixImg);
         console.log('run');
         console.log(allServices.netflix.url)
+	}
+	
+	else {
+		console.log('no netflix here')
 
 		/* **Still need buttons**
 		Netflix

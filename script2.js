@@ -13,7 +13,12 @@ const streamingServicesEl = $('#streamingServices');
 
 apiUrl = 'https://imdb-api.com'
 apiKey = 'k_34v6xu6e/'
-apiKey2 = 'k_alj13px2/'
+apiKey2 = 'k_7jji1u3r/'
+/*
+k_alj13px2
+k_7jji1u3r
+k_34v6xu6e
+*/
 function getTitleId(searchTitle) {
 	
 	url = apiUrl + '/en/API/SearchTitle/' + apiKey2 + searchTitle
@@ -80,21 +85,24 @@ function getStreamingServices(IMDBId) {
 
 function grabServices(allServices) {
 
-    if(!allServices.netflix) {
+    if(allServices.netflix) {
 
-		console.log('no netflix here')
-	}
-	
-	else {
-        var netflixLi = $('<a>');
+		var netflixLi = $('<a>');
         netflixLi.attr('href', allServices.netflix.url);
+		netflixLi.attr('target', '_blank');
 		var netflixImg = $('<img>');
-		netflixImg.attr('src', "./assets/logonetflix.png")
-		netflixImg.attr('target', '_blank');
+		netflixImg.attr('src', "./assets/logonetflix.png");
+		netflixImg.addClass('streaminglogo');
         streamingServicesEl.append(netflixLi);
 		netflixLi.append(netflixImg);
         console.log('run');
         console.log(allServices.netflix.url)
+	}
+	/*
+	console.log('no netflix here')
+	*/
+	else {
+		console.log('no netflix here')
 
 		/* **Still need buttons**
 		Netflix
@@ -130,6 +138,7 @@ function searchSubmit(event) {
 	var title = searchInput.val();
 	getTitleId(title);
 	
+	
 }
 
  function saveTitle(event) {
@@ -140,7 +149,7 @@ function searchSubmit(event) {
 	localStorage.setItem("Watch Item", JSON.stringify(movieTitleEl));
 	createWatchList();
 	console.log('save title');
-	console.log(JSON.stringify(movieTitleEl))
+	console.log(movieTitleEl)
 
 } 
 

@@ -44,7 +44,6 @@ function populateTrending(trending) {
     trend4.text(trending.results[3].original_title);
     trend5.text(trending.results[4].original_title);
 
-    trendImage1.attr('src', trending.results[0].image)
 
 
     

@@ -11,6 +11,8 @@
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>    <title>Where can I watch?</title>
 </head>
 <body>
+
+   <!-- The code below is for the search-->
     <div class="columns is-centered header">
         <div id="watchList" class="column is-half">
           <p>Where can I watch......</p>
@@ -21,9 +23,9 @@
             <option>Watch List Item</option>
           </select>
         </div>
-        
-       
       </div>
+
+      <!-- The code below is for the search results-->
       <div class="columns is-centered m-5 p-2">
           <div  class="column is-one-fifth m-2 p-4 movie-image">
             <img id="movieImage" class="movieposter movieimg"> 
@@ -42,32 +44,46 @@
               </div>
             </div>
           </div>
-          <div class="column is-two-fifths m-2 p-4 streaming-info">
+          <div class="column is-two-fifths m-2 p-4 streaming-info streamingimg " id="streamingServices">
 
           </div>
       </div>
+      
+      <!-- The code below is for the "Trending Now" div-->
     <div class="columns is-centered p-5">
         <div class="column is-full p-5 m-5 trending">
           <p>Trending Now</p>
           <div class="column m-3"></div>
           <div class="columns is-centered">
-            <div id="trending-1" class="column is-2 m-3 trending-info">
-                
-                <img id="trending-1-image">
+            <div id="" class="column is-2 m-3 trending-info">
+              <p id="trending-1"></p>
+              <div  class="column">
+                <img id="trending-1-image" class="trendingimg"> 
+              </div>
             </div>
-            <div id="trending-2" class="column is-2 m-3 trending-info">
-                
-                <img id="trending-2-image">
+            <div class="column is-2 m-3 trending-info">
+              <p id="trending-2"></p>
+              <div  class="column">
+                <img id="trending-2-image" class="trendingimg"> 
+              </div>
             </div>
-            <div id="trending-3" class="column is-2 m-3 trending-info">
-                
-              <img id="trending-3-image">
+            <div class="column is-2 m-3 trending-info">
+              <p id="trending-3"></p>
+              <div  class="column">
+                <img id="trending-3-image" class="trendingimg"> 
+              </div>
             </div>
-            <div id="trending-4" class="column is-2 m-3 trending-info">
-                <img id="trending-4-image">
+            <div class="column is-2 m-3 trending-info">
+              <p id="trending-4" ></p>
+              <div  class="column">
+                <img id="trending-4-image" class="trendingimg"> 
+              </div>
             </div>
-            <div id="trending-5" class="column is-2 m-3 trending-info">
-                <img id="trending-5-image">
+            <div class="column is-2 m-3 trending-info">
+              <p id="trending-5"></p>
+              <div  class="column">
+                <img id="trending-5-image" class="trendingimg"> 
+              </div>
             </div>
           </div>
         </div>
@@ -77,4 +93,5 @@
 <!--<script src="./assets/script_streaming.js"></script>-->
 </body>
 </html>
+
 

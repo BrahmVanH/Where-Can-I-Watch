@@ -134,6 +134,7 @@ function populateMovieCard(data) {
 function searchSubmit(event) {
 
 	event.preventDefault();
+	mainContent.attr("style","");
 	var title = searchInput.val();
 	getTitleId(title);
 	

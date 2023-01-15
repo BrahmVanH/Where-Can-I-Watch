@@ -17,7 +17,7 @@ apiKey = 'k_34v6xu6e/'
 apiKey2 = 'k_alj13px2/'
 function getTitleId(searchTitle) {
 	
-	url = apiUrl + '/en/API/SearchTitle/' + apiKey2 + searchTitle
+	url = apiUrl + '/en/API/SearchTitle/' + apiKey + searchTitle
 	
 	
 	fetch(url)
@@ -41,7 +41,7 @@ function getTitleId(searchTitle) {
 
 function getTitleInformation(titleId) {
 	
-	url = apiUrl + '/en/API/Title/' + apiKey2 + titleId + '/Images,Ratings';
+	url = apiUrl + '/en/API/Title/' + apiKey + titleId + '/Images,Ratings';
 	
 	fetch(url)
 	.then(function(response) {
@@ -61,7 +61,7 @@ function getTitleInformation(titleId) {
 
 function getStreamingServices(IMDBId) {
 
-	url = apiUrl +'/en/API/ExternalSites/' + apiKey2 + IMDBId 
+	url = apiUrl +'/en/API/ExternalSites/' + apiKey + IMDBId 
 	fetch(url)
 	.then(function(response) {
 		return response.json();

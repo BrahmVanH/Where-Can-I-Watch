@@ -18,7 +18,7 @@ apiKey2 = 'k_alj13px2/'
 publicApiKey = 'pk_91mpghkcdsjwxh9wj'
 function getTitleId(searchTitle) {
 	
-	url = apiUrl + '/en/API/SearchTitle/' + publicApiKey + searchTitle
+	url = apiUrl + '/en/API/SearchTitle/' + apiKey + searchTitle
 	
 	
 	fetch(url)
@@ -42,7 +42,7 @@ function getTitleId(searchTitle) {
 
 function getTitleInformation(titleId) {
 	
-	url = apiUrl + '/en/API/Title/' + publicApiKey + titleId + '/Images,Ratings';
+	url = apiUrl + '/en/API/Title/' + apiKey + titleId + '/Images,Ratings';
 	
 	fetch(url)
 	.then(function(response) {
@@ -62,7 +62,7 @@ function getTitleInformation(titleId) {
 
 function getStreamingServices(IMDBId) {
 
-	url = apiUrl +'/en/API/ExternalSites/' + publicApiKey + IMDBId 
+	url = apiUrl +'/en/API/ExternalSites/' + apiKey + IMDBId 
 	fetch(url)
 	.then(function(response) {
 		return response.json();
@@ -140,9 +140,11 @@ function searchSubmit(event) {
 
 	
 	event.preventDefault();
+	var savedTitle = {name: $('#movieTitle')}
 
-	localStorage.setItem("Watch Item", JSON.stringify(movieTitleEl));
+	localStorage.setItem("Watch Item", JSON.stringify(savedTitle));
 	createWatchList();
+	renderWatchListItems();
 	console.log('save title');
 	console.log(JSON.stringify(movieTitleEl))
 

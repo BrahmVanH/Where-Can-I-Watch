@@ -15,9 +15,10 @@ const mainContent = $('#mainContent');
 apiUrl = 'https://imdb-api.com'
 apiKey = 'k_34v6xu6e/'
 apiKey2 = 'k_alj13px2/'
+publicApiKey = 'pk_91mpghkcdsjwxh9wj'
 function getTitleId(searchTitle) {
 	
-	url = apiUrl + '/en/API/SearchTitle/' + apiKey + searchTitle
+	url = apiUrl + '/en/API/SearchTitle/' + publicApiKey + searchTitle
 	
 	
 	fetch(url)
@@ -41,7 +42,7 @@ function getTitleId(searchTitle) {
 
 function getTitleInformation(titleId) {
 	
-	url = apiUrl + '/en/API/Title/' + apiKey + titleId + '/Images,Ratings';
+	url = apiUrl + '/en/API/Title/' + publicApiKey + titleId + '/Images,Ratings';
 	
 	fetch(url)
 	.then(function(response) {
@@ -61,7 +62,7 @@ function getTitleInformation(titleId) {
 
 function getStreamingServices(IMDBId) {
 
-	url = apiUrl +'/en/API/ExternalSites/' + apiKey + IMDBId 
+	url = apiUrl +'/en/API/ExternalSites/' + publicApiKey + IMDBId 
 	fetch(url)
 	.then(function(response) {
 		return response.json();

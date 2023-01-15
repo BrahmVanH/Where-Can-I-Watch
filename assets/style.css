@@ -92,11 +92,11 @@ img{
     border: 5px solid #fca311;
     border-radius: 30px;
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 30px;
+    font-size: 65%;
 }
 
 .trending-info:hover{
-transform: scale(1.);
+box-shadow: 0 5px 15px #fca311;
 }
   
 @keyframes glow {
@@ -139,6 +139,15 @@ strong{
     font-weight: 40px;
     text-decoration: underline #fca311;
     font-size: 40px;
+}
+
+.streaminglogo{
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.trendingimg{
+    border-radius: 30px;
 }
 /* Color Palette (may or many not be changed later)
 Space Cadet #2D3142

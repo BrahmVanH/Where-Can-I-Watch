@@ -145,7 +145,7 @@ function searchSubmit(event) {
 
 	let watchList
 	try {
-		watchList = JSON.parse(localStorage.getItem("Watch Item"))
+		watchList = JSON.parse(localStorage.getItem("Watch Item") || [])
 	} catch (e) {
 		watchList = []
 	}

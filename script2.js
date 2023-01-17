@@ -15,7 +15,6 @@ const mainContent = $('#mainContent');
 apiUrl = 'https://imdb-api.com'
 apiKey = 'k_7jji1u3r/'
 apiKey2 = 'k_alj13px2/'
-publicApiKey = 'pk_91mpghkcdsjwxh9wj'
 function getTitleId(searchTitle) {
 	
 	url = apiUrl + '/en/API/SearchTitle/' + apiKey + searchTitle
@@ -81,7 +80,12 @@ function getStreamingServices(IMDBId) {
 }
 
 function grabServices(allServices) {
-
+/* This bit of code deletes the old logo/link from previous search*/
+	let streamingLogo = document.getElementById("streamingServices");
+	while (streamingLogo.firstChild) {
+		streamingLogo.removeChild(streamingLogo.firstChild)
+	}
+	
     if(allServices.netflix) {
 
 		var netflixLi = $('<a>');
@@ -135,50 +139,48 @@ function searchSubmit(event) {
 	getTitleId(title);
 	
 }
-
+/* this lets you display the watchlist after clicking "my watchlist" which is pulled from the local storage*/
  function saveTitle(event) {
-
-	
 	event.preventDefault();
-	var savedTitle = {name: $('#movieTitle')}
 
-	localStorage.setItem("Watch Item", JSON.stringify(savedTitle));
-	createWatchList();
-	renderWatchListItems();
+	let watchList
+	try {
+		watchList = JSON.parse(localStorage.getItem("Watch Item") || [])
+	} catch (e) {
+		watchList = []
+	}
+	
+	watchList.push(movieTitleEl[0].innerText)
+	localStorage.setItem("Watch Item", JSON.stringify(watchList));
+
 	console.log('save title');
-	console.log(JSON.stringify(movieTitleEl))
+	console.log(movieTitleEl)
 
 } 
 
- function createWatchList() {
-
-	var list = $('<ul>')
-	watchList.append(list);
-
-	for (let i = 0; i < localStorage.length; i++) {
-
-		var watchItem = $('<li>')
-		var storedItem = localStorage.getItem(i);
-		watchItem.text = storedItem;
-		list.append(watchItem);
-	}
-}
 function renderWatchListItems() {
-
-	watchList.empty();
-
-	for (let i = 0; i < watchTitles.length; i++) {
-
-		var li = $('<option>');
-		li.addClass('watchTitleName');
-		li.attr('data-name', watchTitles[i]);
-		watchList.appen(li);
-
-		li.text(watchTitles[i])
-
-		
+	let wlDiv = document.getElementById("watchListDiv")
+	if (wlDiv.style.display == "block") {
+		wlDiv.style.display = "none"
+	} else if (wlDiv.style.display == "none") {
+		let wlEntries = document.getElementById("watchlistEntries");
+		while (wlEntries.firstChild) {
+			wlEntries.removeChild(wlEntries.firstChild)
+		}
+		var list = localStorage.getItem('Watch Item')
+		list = JSON.parse(list)
+		for (let i = 0; i < list.length; i++) {
+			let el = document.createElement("p")
+			el.innerText = list[i]
+			wlEntries.appendChild(el)
+		}
+		wlDiv.style.display = "block"
 	}
-}  
+	
+	
+
+	}
+
 
 /* This bit of code lets you hit the "enter" key to search as well as the actual search button.*/
 var input = document.getElementById("searchInput");

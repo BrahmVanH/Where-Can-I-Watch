@@ -1,25 +1,13 @@
-const trendingCard1 = $('#trendingCard-1')
-const trendingCard2 = $('#trendingCard-2')
-const trendingCard3 = $('#trendingCard-3')
-const trendingCard4 = $('#trendingCard-4')
-const trendingCard5 = $('#trendingCard-5')
 const trending1Title = $('#trending-1-title');
 const trending2Title = $('#trending-2-title');
 const trending3Title = $('#trending-3-title');
 const trending4Title = $('#trending-4-title');
 const trending5Title = $('#trending-5-title');
-const trendSearch1 = $('#trendingSearch1');
-const trendSearch2 = $('#trendingSearch2');
-const trendSearch3 = $('#trendingSearch3');
-const trendSearch4 = $('#trendingSearch4');
-const trendSearch5 = $('#trendingSearch5');
 const trendImage1 = $('#trending-1-image');
 const trendImage2 = $('#trending-2-image');
 const trendImage3 = $('#trending-3-image');
 const trendImage4 = $('#trending-4-image');
 const trendImage5 = $('#trending-5-image');
-const trendingTitlesEl = $('#trendingTitles')
-
 
 const API_URL_TRENDING = 'https://api.themoviedb.org/3/trending/';
 const API_KEY_TMDB = '840b0e9fd24a9f575605a19d49ff9d2c';
@@ -70,15 +58,12 @@ function populateTrending(trending) {
 	trendImage5.attr('src', API_IMAGE_BASE_URL  + trending.results[4].poster_path);
 
 
-	
-	
-	
-	
-	
+
+
+
 }
 
 getTrendingFive();
-
 
 
 

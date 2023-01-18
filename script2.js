@@ -285,7 +285,6 @@ Image data.results[0].img
 // function to clear local storage
 // function to create list items with watch list items
 // li should have anchor tag 
-// Make trending images clickable
 
 
 

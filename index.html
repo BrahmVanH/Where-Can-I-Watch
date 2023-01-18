@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Lobster&family=Orbitron&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/style.css">
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>    <title>Where can I watch?</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>   
+     <title>Where can I watch?</title>
 </head>
 <body>
     <div class="columns is-centered header">
@@ -20,15 +21,16 @@
         </div>
       </div>
 
-      <div class="columns is-centered m-5 p-2" style="display: none;" id="watchListDiv">
-        <div  class="column is-full m-2 p-4 movie-image" id="watchlistEntries">
-          <strong>My Watch List</strong> 
-        
+      <div class="columns is-centered m-5 p-2" style="display:none" id="watchListDiv">
+        <div  class="column is-full m-2 p-4 movie-image" id="watchlistEntries">  
+          <strong>My Watch List</strong>   
+          
+          
         </div>
       </div>
     </div>
 
-      <div class="columns is-centered m-5 p-2">
+      <div class="columns is-centered m-5 p-2 is-hidden" id="movieInformation">
           <div  class="column is-one-fifth m-2 p-4 movie-image" >
             <img id="movieImage" class="movieposter movieimg"> 
           </div>
@@ -95,7 +97,7 @@
     </div>
 <script src="./script2.js"></script>
 <script src="./assets/script_trending.js"></script>
-<!--<script src="./assets/script_streaming.js"></script>-->
+
 </body>
 </html>
 

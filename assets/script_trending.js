@@ -77,24 +77,6 @@ function populateTrending(trending) {
 	
 }
 
-
-
-	trendSearch1.on('click', getTitleId(trending1Title.text));
-	//trendSearch2.on('click', getTitleId(trending.results[1].original_title));
-	//trendSearch3.on('click', getTitleId(trending.results[2].original_title));
-	//trendSearch4.on('click', getTitleId(trending.results[3].original_title));
-	//trendSearch5.on('click', getTitleId(trending.results[4].original_title));
-
-
-
-
-
-	
-	
-
-
-
-
 getTrendingFive();
 
 

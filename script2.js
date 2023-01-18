@@ -10,6 +10,7 @@ const imageEl = $('#movieImage');
 const synopsisEl = $('#movieSynopsis');
 const streamingServicesEl = $('#streamingServices');
 const mainContent = $('#mainContent');
+const movieInfoEl = $('#movieInformation')
 
 
 apiUrl = 'https://imdb-api.com'
@@ -79,6 +80,22 @@ function getStreamingServices(IMDBId) {
 
 }
 
+function revealMovieInfo() {
+
+	movieInfoEl.removeClass('is-hidden')
+}
+
+function searchSubmit(event) {
+
+	event.preventDefault();
+	mainContent.attr("style","");
+	var title = searchInput.val();
+	getTitleId(title);
+	revealMovieInfo();
+	
+	
+}
+
 function grabServices(allServices) {
 /* This bit of code deletes the old logo/link from previous search*/
 	let streamingLogo = document.getElementById("streamingServices");
@@ -96,22 +113,85 @@ function grabServices(allServices) {
 		netflixImg.addClass('streaminglogo');
         streamingServicesEl.append(netflixLi);
 		netflixLi.append(netflixImg);
-        console.log('run');
-        console.log(allServices.netflix.url)
+        console.log('netflix: ' + allServices.netflix.url)
+	}
+
+	if(allServices.tvGuide) {
+
+		var tvGuideLi = $('<a>');
+		tvGuideLi.attr('href', allServices.tvGuide.url);
+		tvGuideLi.attr('target', '_blank');
+		var tvGuideImg = $('<img>');
+		tvGuideImg.attr('src', "./assets/logotvguide.png");
+		tvGuideImg.addClass('streaminglogo');
+		streamingServicesEl.append(tvGuideLi);
+		tvGuideLi.append(tvGuideImg);
+		console.log("TV Guide: " + allServices.tvGuide.url);
+
+	}
+
+	if(allServices.tvGuide) {
+
+		var imDbLi = $('<a>');
+		imDbLi.attr('href', allServices.imDb.url);
+		imDbLi.attr('target', '_blank');
+		var imDbImg = $('<img>');
+		imDbImg.attr('src', "./assets/logoimdb.png");
+		imDbImg.addClass('streaminglogo');
+		streamingServicesEl.append(imDbLi);
+		imDbLi.append(imDbImg);
+		console.log("ImDB: " + allServices.imDb.url);
+
+	}
+
+	if(allServices.rottenTomatoes) {
+
+		var tomatoesLi = $('<a>');
+		tomatoesLi.attr('href', allServices.rottenTomatoes.url);
+		tomatoesLi.attr('target', '_blank');
+		var tomatoesImg = $('<img>');
+		tomatoesImg.attr('src', "./assets/logorottentomatoes.png");
+		tomatoesImg.addClass('streaminglogo');
+		streamingServicesEl.append(tomatoesLi);
+		tomatoesLi.append(tomatoesImg);
+		console.log("tomatoes: " + allServices.rottenTomatoes.url);
+
+	}
+
+	if(allServices.openMediaDatabase) {
+
+		var omdbLi = $('<a>');
+		omdbLi.attr('href', allServices.openMediaDatabase.url);
+		omdbLi.attr('target', '_blank');
+		var omdbImg = $('<img>');
+		omdbImg.attr('src', "./assets/logoomdb.png");
+		omdbImg.addClass('streaminglogo');
+		streamingServicesEl.append(omdbLi);
+		omdbLi.append(omdbImg);
+		console.log("omdb: " + allServices.openMediaDatabase.url);
+
+	}
+
+	if(allServices.theMovieDb) {
+
+		var tmdbLi = $('<a>');
+		tmdbLi.attr('href', allServices.theMovieDb.url);
+		tmdbLi.attr('target', '_blank');
+		var tmdbImg = $('<img>');
+		tmdbImg.attr('src', "./assets/logotmdb.jpg");
+		tmdbImg.addClass('streaminglogo');
+		streamingServicesEl.append(tmdbLi);
+		tmdbLi.append(tmdbImg);
+		console.log("tmdb: " + allServices.theMovieDb.url);
+
 	}
 	
 	else {
-		console.log('no netflix here')
+		console.log('no netflix here');
+		console.log('no tv guide here');
+		console.log('no imdb here');
+		console.log('no tomatoes here');
 
-		/* **Still need buttons**
-		Netflix
-		Hulu
-		Disney Plus
-		Paramount+
-		Amazon Prime Video
-		Apple TV
-		HBO Max
-		Showtime */
 			
     }
 
@@ -131,14 +211,7 @@ function populateMovieCard(data) {
 	
 }
 
-function searchSubmit(event) {
 
-	event.preventDefault();
-	mainContent.attr("style","");
-	var title = searchInput.val();
-	getTitleId(title);
-	
-}
 /* this lets you display the watchlist after clicking "my watchlist" which is pulled from the local storage*/
  function saveTitle(event) {
 	event.preventDefault();

@@ -1,39 +1,30 @@
-# TVandMoviesSearch
+## Where Can I Watch...?
+
+# Description
+
+This is an application created to allow users to search for a movie title of their interest and recieve information on the movie production, as well as links to external sources to find more information on the title. The application also offers updated, to the week, current trending movie titles. 
+
+Link to deployed application: 
+https://brahmvanh.github.io/Where-Can-I-Watch/
+
+![screenshot](./assets/Images/Where-Can-I-Watch-screenshot.png)
 
 
-# User Story
 
-AS A user 
+# Installation
 
-I WANT to be able to access television and movie listings to learn more about them and what streaming services to watch them on
+N/A
 
-SO THAT I can know where to watch my movie
+# Usage
 
-GIVEN that I am looking for the best site to stream a movie or TV show title
+This application can be used on most browsers, as well as most modern portable devices. The application utilizes breakpoints to allow for efficient and appropriate display parameters on most modern devices. 
 
-WHEN I entire the title of my movie or show into the search bar and hit 'search'
+# Credits
 
-THEN I am presented with the top 5 best matching search results
+Mike Rose, GitHub: https://github.com/Mrose332
+K.D. Nagpal, GitHub: https://github.com/KDNagpal
+Brahm Van Houzen, GitHub: https://github.com/BrahmVanH
 
-GIVEN I have been presented with 5 titles that best match my search
+# License
 
-WHEN I examine the details present on each title card
-
-THEN I am presented with the streaming services that are playing my title, as well as the year, genre, and other general information on the title
-
-
-API's to be used:
-
-shows title availability across streaming services https://developers.themoviedb.org/3/movies/get-movie-watch-providers
-api to get movie description and general information https://imdb-api.com/api#Search-header 
-api to get top 5 trending movies right now as our landing page https://developers.themoviedb.org/3/trending/get-trending
-
-Tasks:
-
-create basic HTML >>
-style the page >>
-getting familiar with the APIs >>
-search bar >>
-js cleanup
-Need to include use of local storage
-come up with acceptance criteria >> 
+Please refer to license in Repo.

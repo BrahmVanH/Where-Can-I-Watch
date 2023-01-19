@@ -109,7 +109,7 @@ function grabServices(allServices) {
         netflixLi.attr('href', allServices.netflix.url);
 		netflixLi.attr('target', '_blank');
 		var netflixImg = $('<img>');
-		netflixImg.attr('src', "./assets/logonetflix.png")
+		netflixImg.attr('src', "./assets/images/logonetflix.png")
 		netflixImg.addClass('streaminglogo');
         streamingServicesEl.append(netflixLi);
 		netflixLi.append(netflixImg);
@@ -122,7 +122,7 @@ function grabServices(allServices) {
 		tvGuideLi.attr('href', allServices.tvGuide.url);
 		tvGuideLi.attr('target', '_blank');
 		var tvGuideImg = $('<img>');
-		tvGuideImg.attr('src', "./assets/logotvguide.png");
+		tvGuideImg.attr('src', "./assets/images/logotvguide.png");
 		tvGuideImg.addClass('streaminglogo');
 		streamingServicesEl.append(tvGuideLi);
 		tvGuideLi.append(tvGuideImg);
@@ -136,7 +136,7 @@ function grabServices(allServices) {
 		imDbLi.attr('href', allServices.imDb.url);
 		imDbLi.attr('target', '_blank');
 		var imDbImg = $('<img>');
-		imDbImg.attr('src', "./assets/logoimdb.png");
+		imDbImg.attr('src', "./assets/images/logoimdb.png");
 		imDbImg.addClass('streaminglogo');
 		streamingServicesEl.append(imDbLi);
 		imDbLi.append(imDbImg);
@@ -150,7 +150,7 @@ function grabServices(allServices) {
 		tomatoesLi.attr('href', allServices.rottenTomatoes.url);
 		tomatoesLi.attr('target', '_blank');
 		var tomatoesImg = $('<img>');
-		tomatoesImg.attr('src', "./assets/logorottentomatoes.png");
+		tomatoesImg.attr('src', "./assets/images/logorottentomatoes.png");
 		tomatoesImg.addClass('streaminglogo');
 		streamingServicesEl.append(tomatoesLi);
 		tomatoesLi.append(tomatoesImg);
@@ -164,7 +164,7 @@ function grabServices(allServices) {
 		omdbLi.attr('href', allServices.openMediaDatabase.url);
 		omdbLi.attr('target', '_blank');
 		var omdbImg = $('<img>');
-		omdbImg.attr('src', "./assets/logoomdb.png");
+		omdbImg.attr('src', "./assets/images/logoomdb.png");
 		omdbImg.addClass('streaminglogo');
 		streamingServicesEl.append(omdbLi);
 		omdbLi.append(omdbImg);
@@ -178,7 +178,7 @@ function grabServices(allServices) {
 		tmdbLi.attr('href', allServices.theMovieDb.url);
 		tmdbLi.attr('target', '_blank');
 		var tmdbImg = $('<img>');
-		tmdbImg.attr('src', "./assets/logotmdb.jpg");
+		tmdbImg.attr('src', "./assets/images/logotmdb.jpg");
 		tmdbImg.addClass('streaminglogo');
 		streamingServicesEl.append(tmdbLi);
 		tmdbLi.append(tmdbImg);
@@ -225,6 +225,7 @@ function populateMovieCard(data) {
 	
 	watchList.push(movieTitleEl[0].innerText)
 	localStorage.setItem("Watch Item", JSON.stringify(watchList));
+	renderWatchListItems();
 
 	console.log('save title');
 	console.log(movieTitleEl)
@@ -240,6 +241,9 @@ function renderWatchListItems() {
 		while (wlEntries.firstChild) {
 			wlEntries.removeChild(wlEntries.firstChild)
 		}
+		
+		
+		
 		var list = localStorage.getItem('Watch Item')
 		list = JSON.parse(list)
 		for (let i = 0; i < list.length; i++) {
@@ -249,9 +253,6 @@ function renderWatchListItems() {
 		}
 		wlDiv.style.display = "block"
 	}
-	
-	
-
 	}
 
 
